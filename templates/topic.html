@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}{{topic.title}}{% endblock %}
+{% block href_index %}../{% endblock %}
+{% block topic_links %}../{% endblock %}
+
+{% block main %}
+
+<hr>
+<h3>{{topic.title}}</h3>
+<hr>
+{% for article in topic.articles %}
+  <h6>
+    <a href="../{{article.link}}">{{article.title}}</a>
+  </h6>
+{% endfor %}
+
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}список статей{% endblock %}
+
+{% block main %}
+
+{% for topic in topics %}
+  <hr>
+  <h3>{{topic.title}}</h3>
+  <hr>
+  {% for article in topic.articles %}
+    <h6>
+      <a href={{article.link}}>{{article.title}}</a>
+    </h6>
+  {% endfor %}
+{% endfor %}
+
+{% endblock %}

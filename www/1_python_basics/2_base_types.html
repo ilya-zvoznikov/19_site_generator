@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ru">
+<head>
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- Bootstrap CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<title>Энциклопедия Devman: Основные типы данных</title>
+</head>
+<body>
+	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+		<a class="navbar-brand" href="https://devman.org">Devman</a>
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<div class="collapse navbar-collapse" id="navbarNav">
+			<ul class="navbar-nav">
+				<li class="nav-item active">
+					<a class="nav-link" href="../index.html">Главная</a>
+				</li>
+
+        
+				<li class="nav-item active">
+					<a class="nav-link" href="../0_tutorial/0_tutorial.html">Арсенал</a>
+				</li>
+				
+				<li class="nav-item active">
+					<a class="nav-link" href="../1_python_basics/1_python_basics.html">Основы Питона</a>
+				</li>
+				
+				<li class="nav-item active">
+					<a class="nav-link" href="../2_html/2_html.html">HTML</a>
+				</li>
+				
+				<li class="nav-item active">
+					<a class="nav-link" href="../4_git/4_git.html">Гит</a>
+				</li>
+				
+
+			</ul>
+		</div>
+		<div class="collapse navbar-collapse d-flex justify-content-end">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a class="nav-link" href="https://github.com/ilya-zvoznikov/19_site_generator">Github</a>
+				</li>
+			</ul>
+		</div>
+	</nav>
+	<main class="container">
+		
+
+<hr>
+<h3>Основные типы данных</h3>
+<hr>
+<h3>О типах данных по-быстрому</h3>
+<p>Цель этого подмодуля – по-быстрому рассказать о основных типах данных и дать их потрогать.
+Позже мы познакомимся с типами куда обстоятельнее.</p>
+<h3>Целые и вещественные числа</h3>
+<p>Числа – и в Африке числа. С ними можно производить арифметические действия. Всё просто:</p>
+<pre><code>:::python
+2 + 2  # 4
+3 + 2.5  # 5.5
+6 / 2  # 3
+2 ** 3  # 8
+</code></pre>
+<p>Решётка – это знак комментария в Питоне,
+а в этом туториале результат работы команды указан на той же строчке за комментарием.</p>
+<h3>Строки</h3>
+<p>Помимо чисел в Питоне есть строки с богатым набором встроенных функций. С ними просто и удобно работать:</p>
+<pre><code>:::python
+'hello'  # строковая константа
+"hello"  # тип кавычек не имеет значения
+hello[1]  # 'e'
+'hello' + ' ' + 'world'  # 'hello world'
+'blah ' * 3  # 'blah blah blah '
+</code></pre>
+<p>У них много встроенных функций:</p>
+<pre><code>:::python
+'hello  '.strip()  # 'hello'
+'hello world'.upper()  # 'HELLO WORLD'
+len('hello')  # 5
+'wor' in 'hello world'  # True (входит ли "wor" в строку "hello world")
+'hello world'.startswith('hel')  # True (начинается ли  "hello world" c "hel")
+</code></pre>
+<p>Ещё можно превращать строку в список, список в строку,
+получать подстроку и по-разному форматировать значения, но об этом позже.</p>
+<h3>Список</h3>
+<p>Список – последовательность элементов. Ограничения на длину нет.
+Элементы могут быть разных типов, даже другими списками. Выглядит он так:</p>
+<pre><code>:::python
+[1, 2, 3]  # в квадратных скобках, элементы через запятую
+digits = [4, 5, 6]  # переменная, в которой живёт список
+digits[0]  # 4 (нумерация с нуля)
+digits[1] = 22  # теперь в списке digits на втором месте стоит 22
+digits.append(8)  # а теперь в конец добавилась восьмёрка
+</code></pre>
+<p>Из списка надо часто получить подсписок: несколько первых элементов, последних, что-то из середины.
+Это называется срезами и позволяет делать много чего. Вот самые простые срезы:</p>
+<pre><code>:::python
+squares = [1, 4, 9, 16, 25, 36, 49]
+squares[1:3]  # [4, 9] (элементы со второго по третий)
+squares[:4]  # [1, 4, 9, 16] (элементы с начала до четвёртого)
+squares[4:]  # [25, 36, 49] (элементы с пятого до конца)
+squares[1:6:2]  # [4, 16, 36] (элементы со второго до шестого с шагом два)
+</code></pre>
+
+
+
+	</main>
+	<!-- Optional JavaScript -->
+	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+</body>
+</html>
