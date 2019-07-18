@@ -1,6 +1,7 @@
 # Encyclopedia
 
 Encyclopedia is a site consisted of educational articles from [DEVMAN.org](https://devman.org)
+You can see it at [https://ilya-zvoznikov.github.io/19_site_generator/www/index.html](https://ilya-zvoznikov.github.io/19_site_generator/www/index.html)
 It created automatically by Site Generator Script.
 The script converts Markdown articles to HTML and tracks any changes in site templates and articles.
 
