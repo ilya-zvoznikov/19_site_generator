@@ -7,8 +7,8 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<link rel="stylesheet" type="text/css" href="css/main.css">
-	<title>Энциклопедия Devman: Основные конструкции</title>
+	<link rel="shortcut icon" href="../images/bookcase.ico" type="image/x-icon">
+  <title>Энциклопедия Devman: Основные конструкции</title>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -60,7 +60,7 @@
 <p>Сейчас мы совсем реактивно пройдёмся по самым основным управляющим конструкциям. Гет реди.</p>
 <h3>if</h3>
 <p>Ну, вы все знаете условный оператор, так ведь?</p>
-<pre><code>:::python
+<pre><code>>>>python
 if age &lt; 18:
     print('Никаких тебе сигарет. Ишь чего удумал!')
 else:
@@ -69,14 +69,14 @@ else:
 <p>Есть ещё <code>elif</code>, их можно сделать много в одном операторе. Это такой аналог <code>which</code> из других языков.</p>
 <h3>for</h3>
 <p>Цикл. Вместо сишного варианта с init, cond и loop выражениями, тут просто итерация по коллекции:</p>
-<pre><code>:::python
+<pre><code>>>>python
 for user in users:
     print user
 </code></pre>
 <p>Иногда надо не пройтись по списку, а выполнить одну и ту же операцию много раз. Тогда хорошо подходит функция
 <a href="https://docs.python.org/3.5/library/functions.html#func-range">range</a>. Она возвращает целые числа в заданном промежутке,
 поэтому в цикле её можно использовать так:</p>
-<pre><code>:::python
+<pre><code>>>>python
 for level_num in range(10):
     user.levelup()  # пользователь получит десять уровней. Читер!
 </code></pre>
@@ -87,19 +87,19 @@ for level_num in range(10):
 <h3>def</h3>
 <p>Начало объявления функции. После него идёт название,
 потом – аргументы функции в скобках, двоеточие и тело функции с отступом:</p>
-<pre><code>:::python
+<pre><code>>>>python
 def get_square(value):
     return value ** 2
 </code></pre>
 <p>То, что после <code>return</code> – это возвращаемое значение функции.</p>
 <p>Функцию создали, вот как её теперь использовать:</p>
-<pre><code>:::python
+<pre><code>>>>python
 print(get_square(2))  # 4
 print(get_square(6))  # 36
 print(get_square('ыыы'))  # всё сломается
 </code></pre>
 <p>А вот пример посложнее, из исходников Девмана. Получает пользователя по айди в Слаке:</p>
-<pre><code>:::python
+<pre><code>>>>python
 def _get_user_by_slack_id(slack_user_id):
     user_email = get_slack_email_for_user(slack_user_id)
     return User.objects.filter(email__iexact=user_email).first()
@@ -107,7 +107,7 @@ def _get_user_by_slack_id(slack_user_id):
 <p>(вот почему емейл необходим)</p>
 <h3>range</h3>
 <p>Функция очень полезная, поэтому про неё отдельно. <code>range</code> генерирует целые числа в заданном диапазоне. Например:</p>
-<pre><code>:::python
+<pre><code>>>>python
 range(10)  # 0..0
 range(5, 10)  # 5..9
 range(5, 10, 2)  # [5, 7, 9] (от пяти до девяти с шагом два)
@@ -116,13 +116,13 @@ range(5, 10, 2)  # [5, 7, 9] (от пяти до девяти с шагом дв
 Вместо этого он вернёт объект, который будет возвращать элементы как только они нужны, по одному.
 Поэтому код <code>range(9999999999999)</code> не съест всю память.
 Этот хитрый объект (Sequence ABC, но об этом потом) можно превратить в список явно:</p>
-<pre><code>:::python
+<pre><code>>>>python
 list(range(9999999999999))
 </code></pre>
 <p>(не советую так делать)</p>
 <h3>pass</h3>
 <p>Блок, который ничего не делает:</p>
-<pre><code>:::python
+<pre><code>>>>python
 for i in range(20):
     pass  # 20 раз сделать ничего. Очень полезно!
 </code></pre>

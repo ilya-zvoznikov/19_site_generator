@@ -41,6 +41,10 @@ def convert_markdown_to_html(md_file_path):
     return html_content
 
 
+def fix_text_bugs(html_content):
+    return html_content.replace(':::', '>>>')
+
+
 def create_link(md_filename):
     md_filename = md_filename.replace('.md', '.html')
     md_filename = md_filename.replace(' ', '_')
@@ -72,6 +76,7 @@ def make_site():
 
         for article in topic['articles']:
             html_content = convert_markdown_to_html(article['source'])
+            html_content = fix_text_bugs(html_content)
             article_page = create_article_page(
                 jinja2_env=env,
                 topics_list=topics_list,
@@ -90,8 +95,11 @@ def create_topics_list(config_dict):
                 topic['articles'].append(article)
         for article in topic['articles']:
             article['link'] = create_link(article['source'])
-        tmp = os.path.split(topic['articles'][0]['link'])[0]
-        topic['link'] = os.path.join(tmp, '{}.html'.format(tmp))
+        topic_folder = os.path.split(topic['articles'][0]['link'])[0]
+        topic['link'] = os.path.join(
+            topic_folder,
+            '{}.html'.format(topic_folder),
+        )
     return topics_list
 
 
